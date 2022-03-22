@@ -28,7 +28,7 @@
                 <button v-else type="button" class="btn btn-secondary">Hide Secret</button>
                 <hr>
                 <div class="bg-light py-5">
-                    <p v-bind:style="scrambled_style">{{ scrambled_text }}</p>
+                    <p v-show="!is_hidden">{{ scrambled_text }}</p>
                 </div>
             </div>
         </div>

@@ -19,7 +19,6 @@ new Vue({
         return {
             scrambled_text: 'HI',
             is_hidden: true,
-            scrambled_style: 'display: hidden'
         }
     }
 })
