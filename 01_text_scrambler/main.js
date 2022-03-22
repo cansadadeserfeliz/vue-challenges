@@ -14,11 +14,10 @@ function scramble(original_text, shift=33324){
 
 new Vue({
     el: "#app",
-    data () {
-        return {
-            scrambled_text: '',
-            is_hidden: true,
-        }
+    data: {
+        original_text: '',
+        scrambled_text: '',
+        is_hidden: true,
     },
     methods: {
         scramble: function () {
