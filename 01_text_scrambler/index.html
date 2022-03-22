@@ -21,7 +21,7 @@
             <h1 class="display-5 fw-bold">Text Scrambler</h1>
             <div id="app">
                 <div class="input-group">
-                    <textarea v-on:keyup="scramble" v-model="original_text"></textarea>
+                    <textarea @keyup="scramble" v-model="original_text"></textarea>
                 </div>
                 <hr>
                 <button v-if="is_hidden" type="button" class="btn btn-secondary">Show Secret</button>
