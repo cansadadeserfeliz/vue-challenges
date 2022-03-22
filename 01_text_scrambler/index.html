@@ -24,7 +24,8 @@
                     <textarea v-model="original_text"></textarea>
                 </div>
                 <hr>
-                <button type="button" class="btn btn-secondary">{{ btn_label }}</button>
+                <button v-if="is_hidden" type="button" class="btn btn-secondary">Show Secret</button>
+                <button v-else type="button" class="btn btn-secondary">Hide Secret</button>
                 <hr>
                 <div class="bg-light py-5">
                     <p v-bind:style="scrambled_style">{{ scrambled_text }}</p>
