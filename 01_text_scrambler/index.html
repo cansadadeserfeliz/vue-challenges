@@ -24,10 +24,10 @@
                     <textarea @keyup="scramble" v-model="original_text"></textarea>
                 </div>
                 <hr>
-                <button v-if="is_hidden" type="button" class="btn btn-secondary">Show Secret</button>
-                <button v-else type="button" class="btn btn-secondary">Hide Secret</button>
+                <button v-if="is_hidden" @click="toggle_visibility" type="button" class="btn btn-secondary">Show Secret</button>
+                <button v-else @click="toggle_visibility" type="button" class="btn btn-secondary">Hide Secret</button>
                 <hr>
-                <div class="bg-light py-5">
+                <div class="bg-danger py-5">
                     <p v-show="!is_hidden">{{ scrambled_text }}</p>
                 </div>
             </div>
