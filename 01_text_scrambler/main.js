@@ -4,9 +4,8 @@
  * @param shift {int}
  * @returns {string}
  */
-function scamble(original_text, shift=33324){
-
-    let result = "";
+function scramble(original_text, shift=33324){
+    let result = '';
     for(let i = 0; i < original_text.length; i++){
         result += String.fromCharCode(original_text.charCodeAt(i) + shift)
     }
@@ -17,8 +16,14 @@ new Vue({
     el: "#app",
     data () {
         return {
-            scrambled_text: 'HI',
+            scrambled_text: '',
             is_hidden: true,
         }
-    }
+    },
+    methods: {
+        scramble: function () {
+            this.scrambled_text = scramble(this.original_text)
+            console.log(this.scrambled_text)
+        }
+    },
 })
