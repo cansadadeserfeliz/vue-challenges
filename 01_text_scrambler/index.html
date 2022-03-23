@@ -24,8 +24,8 @@
                     <textarea @keyup="scramble" v-model="original_text"></textarea>
                 </div>
                 <hr>
-                <button v-if="is_hidden" @click="toggle_visibility" type="button" class="btn btn-secondary">Show Secret</button>
-                <button v-else @click="toggle_visibility" type="button" class="btn btn-secondary">Hide Secret</button>
+                <button v-if="is_hidden" @click="is_hidden = false" type="button" class="btn btn-secondary">Show Secret</button>
+                <button v-else @click="is_hidden = true" type="button" class="btn btn-secondary">Hide Secret</button>
                 <hr>
                 <div class="p-5" :class="[ is_hidden ? 'bg-danger' : 'bg-success']">
                     <p v-show="!is_hidden">{{ scrambled_text }}</p>

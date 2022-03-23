@@ -23,8 +23,5 @@ new Vue({
         scramble: function () {
             this.scrambled_text = scramble(this.original_text)
         },
-        toggle_visibility: function () {
-            this.is_hidden = !this.is_hidden
-        },
     },
 })
