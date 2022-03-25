@@ -20,3 +20,30 @@
 ### Solution
 
 `01_text_scrambler/index.html`
+
+## Code challenge #2: Tajeta Credito
+
+### Descripción
+Hacer un formulario que permite a un usario entrar los datos de su tajeta credito.
+Un preview de la información esta visible mientras el usario entra sus datos.
+
+### ACs
+
+El formulario:
+
+* Campo para entrar el numero de la tajeta (16 dígitos)
+* Campo para entrar el nombre y appellido del usario
+* Campo para elegir el mes de expiración de la tajeta
+* Campo para entrar el año de expiración de la tajeta
+* Campo para entrar el codigo de seguridad de la tajeta
+
+El preview:
+
+* Los dígitos de la tajeta, en grupos de 4
+* El nombre y appelido del usario
+* El mes y año de expiración es este formato: MM/AA
+* El codigo de seguridad (extra: al reverso)
+
+Extra Bonus:
+
+* Animación de rotación cuando el usario entra el codigo de seguridad
