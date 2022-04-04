@@ -1,0 +1,52 @@
+.credit-card-container {
+    height: 250px;
+}
+
+.credit-card {
+    width: 100%;
+    max-width: 400px;
+    min-height: 200px;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+    perspective: 500px;
+}
+
+.credit-card-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+/* Source: https://codepen.io/edeesims/pen/wvpYWW */
+.credit-card-wrapper.transformed {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
+}
+
+.credit-card-front,
+.credit-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: teal;
+    color: white;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+.credit-card .ccv {
+    background-color: azure;
+    color: teal;
+    padding: 10px;
+}
+
+.credit-card-back {
+    transform: rotateY( 180deg );
+    background-color: darkslategray;
+}
