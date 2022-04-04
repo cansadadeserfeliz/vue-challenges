@@ -15,6 +15,9 @@
     <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
+    <!-- Validate.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+
     <title>Code challenge #2 - Credit Card</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -44,7 +47,10 @@
         <form class="m-3">
             <div class="mb-3">
                 <label for="cardNumberInput" class="form-label">Card number</label>
-                <input v-model="number" type="text" class="form-control" id="cardNumberInput">
+                <input v-model="number" @change="validateNumber" type="text" class="form-control" :class="{ 'is-invalid' : errors.number }" id="cardNumberInput">
+                <div v-if="errors.number" class="invalid-feedback">
+                    {{ errors.number }}
+                </div>
             </div>
             <div class="mb-3">
                 <label for="cardHolderNameInput" class="form-label">Displayed name</label>
