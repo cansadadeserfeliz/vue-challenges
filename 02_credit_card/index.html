@@ -15,7 +15,7 @@
     <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
-    <title>Document</title>
+    <title>Code challenge #2 - Credit Card</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -24,44 +24,53 @@
         <div>
             <div class="credit-card credit-card-front rounded-3 my-2 p-5">
                 <div class="title">Credit Card</div>
-                <div class="number">{{ number }}</div>
-                <div class="displayed-name">{{ displayed_name }}</div>
+                <div class="number">{{ numberDisplay }}</div>
+                <div class="displayed-name">{{ cardHolderNameDisplay }}</div>
                 <div class="expiration-date">
-                    <span>{{ expiration_month }}</span>/<span>{{ expiration_year }}</span>
+                    <span>{{ expirationMonthDisplay }}</span>/<span>{{ expirationYearDisplay }}</span>
                 </div>
             </div>
             <div class="credit-card credit-card-back rounded-3 my-2 p-5">
-                <div>
-                    <span>CVV</span>
-                    <span>{{ ccv }}</span>
+                <div class="d-flex">
+                    <span class="align-self-center">CVV</span>
+                    <span class="ccv align-self-center ms-auto">{{ ccvDisplay }}</span>
                 </div>
             </div>
         </div>
         <form class="my-2">
             <div class="mb-3">
                 <label for="cardNumberInput" class="form-label">Card number</label>
-                <input type="text" class="form-control" id="cardNumberInput">
+                <input v-model="number" type="text" class="form-control" id="cardNumberInput">
             </div>
             <div class="mb-3">
-                <label for="displayedNameInput" class="form-label">Displayed name</label>
-                <input type="text" class="form-control" id="displayedNameInput">
+                <label for="cardHolderNameInput" class="form-label">Displayed name</label>
+                <input v-model="card_holder_name" type="text" class="form-control" id="cardHolderNameInput">
             </div>
             <div class="row">
                 <div class="col">
                     <label for="expireMonthInput" class="form-label">Expire month</label>
-                    <select class="form-select" id="expireMonthInput">
-                        <option selected value="01">January</option>
+                    <select v-model="expiration_month" class="form-select" id="expireMonthInput">
+                        <option value="01">January</option>
                         <option value="02">February</option>
                         <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
                     </select>
                 </div>
                 <div class="col">
                     <label for="expireYearInput" class="form-label">Expire year</label>
-                    <input type="text" class="form-control" id="expireYearInput">
+                    <input v-model="expiration_year" type="number" class="form-control" id="expireYearInput">
                 </div>
                 <div class="col">
                     <label for="securityNumberInput" class="form-label">Security number</label>
-                    <input type="text" class="form-control" id="securityNumberInput">
+                    <input v-model="ccv" type="text" class="form-control" id="securityNumberInput">
                 </div>
             </div>
         </form>

@@ -10,3 +10,8 @@
     background-color: teal;
     color: white;
 }
+.credit-card .ccv {
+    background-color: azure;
+    color: teal;
+    padding: 10px;
+}
