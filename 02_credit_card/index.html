@@ -19,25 +19,29 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<main>
-    <div class="credit-card-container" id="app">
-        <div>
-            <div class="credit-card credit-card-front rounded-3 my-2 p-5">
-                <div class="title">Credit Card</div>
-                <div class="number">{{ numberDisplay }}</div>
-                <div class="displayed-name">{{ cardHolderNameDisplay }}</div>
-                <div class="expiration-date">
-                    <span>{{ expirationMonthDisplay }}</span>/<span>{{ expirationYearDisplay }}</span>
+<main id="app">
+    <div class="credit-card-container">
+        <div class="credit-card">
+            <div class="credit-card-wrapper" :class="{ 'transformed' : transformed }">
+                <div class="credit-card-front p-5">
+                    <div class="title">Credit Card</div>
+                    <div class="number">{{ numberDisplay }}</div>
+                    <div class="displayed-name">{{ cardHolderNameDisplay }}</div>
+                    <div class="expiration-date">
+                        <span>{{ expirationMonthDisplay }}</span>/<span>{{ expirationYearDisplay }}</span>
+                    </div>
                 </div>
-            </div>
-            <div class="credit-card credit-card-back rounded-3 my-2 p-5">
-                <div class="d-flex">
-                    <span class="align-self-center">CVV</span>
-                    <span class="ccv align-self-center ms-auto">{{ ccvDisplay }}</span>
+                <div class="credit-card-back p-5">
+                    <div class="d-flex">
+                        <span class="align-self-center">CVV</span>
+                        <span class="ccv align-self-center ms-auto">{{ ccvDisplay }}</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <form class="my-2">
+    </div>
+    <div>
+        <form class="m-3">
             <div class="mb-3">
                 <label for="cardNumberInput" class="form-label">Card number</label>
                 <input v-model="number" type="text" class="form-control" id="cardNumberInput">
@@ -70,7 +74,7 @@
                 </div>
                 <div class="col">
                     <label for="securityNumberInput" class="form-label">Security number</label>
-                    <input v-model="ccv" type="text" class="form-control" id="securityNumberInput">
+                    <input v-model="ccv" @focus="transform" @focusout="transform" type="number" min="100" max="999" class="form-control" id="securityNumberInput">
                 </div>
             </div>
         </form>

@@ -6,6 +6,7 @@ new Vue({
         expiration_month: '01',
         expiration_year: null,
         ccv: '',
+        transformed: false,
     },
     computed: {
         numberDisplay: function () {
@@ -31,6 +32,11 @@ new Vue({
         },
         ccvDisplay : function () {
             return this.ccv || 'XXX';
+        }
+    },
+    methods: {
+        transform: function () {
+            this.transformed = !this.transformed;
         }
     }
 })
