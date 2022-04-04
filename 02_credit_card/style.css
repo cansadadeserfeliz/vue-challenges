@@ -1,0 +1,12 @@
+.credit-card-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: auto;
+}
+
+.credit-card {
+    min-height: 200px;
+    background-color: teal;
+    color: white;
+}
